@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Cuenta Letras</h1>
+      <textarea 
+          placeholder='Introduzca el texto a contar...' 
+          maxLength={500}
+          rows={8} 
+          cols={80}>
+      </textarea>
+      <Letras Letras={Letras}/>
+      <Palabras Palabras={Palabras}/>
+
+            
+    </>
   );
 }
 
