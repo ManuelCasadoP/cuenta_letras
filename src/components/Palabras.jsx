@@ -1,21 +1,20 @@
 
 function palabras ({palabras}){
 
-    const nPalabras = palabras.split(" ")
+    const nPalabras = palabras.split(" ").filter(
+        string=>string !== "" && string !== "/n"
+    );
     
-    nPalabras.filter(
-        string=>string !== ("")
-    )
-            
     console.log(nPalabras);
 
+    
     return (
         <>     
             <h1>Total nº Palabras: {nPalabras.length}</h1>
 
         </>
     );
-
+    
 
 };
 
