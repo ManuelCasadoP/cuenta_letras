@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Letras from "./components/Letras";
 import Palabras from "./components/Palabras";
@@ -13,24 +13,31 @@ function App() {
 
   function changeTextHandler (event) {
     setTextAreaContent (event.target.value);
-    console.log(textAreaContent);
+    console.log("state: ", textAreaContent);
   }
+
+  useEffect(()=>{
+
+    console.log("effect: ", textAreaContent)
+  }, [textAreaContent]  
+  
+  )
 
   
   return (
     <>
-      <h1>Cuenta Letras</h1>
+      <h1>Cuenta Letras/Palabras</h1>
       
       <textarea 
           onChange={changeTextHandler}
           placeholder='Introduzca el texto a contar...' 
-          maxLength={500}
+          maxLength={150}
           rows={8} 
-          cols={80}>
+          cols={40}>
       </textarea>
       
-      <Letras Letras={Letras}/>
-      <Palabras Palabras={Palabras}/>
+      <Letras letras={textAreaContent}/>
+      <Palabras palabras={textAreaContent}/>
 
 
             
